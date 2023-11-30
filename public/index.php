@@ -1,3 +1,3 @@
 <?php
- echo "hello word";
+ echo "hello word, eu sou um novo projeto";
  ?>
