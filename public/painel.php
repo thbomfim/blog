@@ -10,7 +10,7 @@
     session_start();
     $_SESSION["user"] = $user["usuario"];
 
-    echo "ola voce esta logado". $_SESSION["user"];
+    echo "ola voce esta logadooo". $_SESSION["user"];
     ?>
 </body>
 </html>
