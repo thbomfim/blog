@@ -13,4 +13,4 @@
     echo "ola voce esta logado". $_SESSION["user"];
     ?>
 </body>
-</html>l
+</html>
