@@ -1,3 +1,6 @@
+<?php 
+include("../app/config/config.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,10 +10,7 @@
 </head>
 <body>
     <?php
-    session_start();
-    $_SESSION["user"] = $user["usuario"];
-
-    echo "ola voce esta logadooo". $_SESSION["user"];
+    echo "ola ".NAME_USER."  voce esta logado <br>";
     ?>
 </body>
 </html>

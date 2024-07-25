@@ -26,7 +26,7 @@ $page = $_GET["page"];
     </header>
 
     <div class="container">
-        <form method="post" action="admin.php?page=login">
+        <form method="post" action="?page=login">
             <label>Usuario:</label><input type="text" name="usuario" id="usuario"><br>
             <label>Senha: <input type="password" name="senha" id="senha"></label><br>
             <input type="submit" value="Entrar">
@@ -41,18 +41,22 @@ $page = $_GET["page"];
         $senha = $_POST["senha"]; 
         
         
-        $sql = "SELECT * FROM usuario WHERE usuario = :usuario AND senha = :senha";
+        $sql = "SELECT * FROM user WHERE name = :name AND pass = :pass";
         $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(":usuario", $usuario);
-        $stmt->bindValue(":senha", $senha);
+        $stmt->bindValue(":name", $usuario);
+        $stmt->bindValue(":pass", $senha);
         $stmt->execute();
-        $user = $stmt->fetchColumn();
 
-            if ($user == true) {
+            if ($stmt->rowCount() >= 1) {
                 
+                $user = $stmt->fetch();
                 session_start();
-                $_SESSION["user"] = $user["usuario"];
-                header("location: painel.php");
+                $_SESSION["user"] = $user["name"];
+                $_SESSION["id"] = $user["id"];
+
+                var_dump($_SESSION["user"]);
+                echo "<a href=\"painel.php\">CLIQUE</a>";
+                //header("location: painel.php");
                 exit;
             }else{
                echo "Login invalido"; 

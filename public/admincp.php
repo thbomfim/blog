@@ -33,10 +33,10 @@ include("../app/conexao/conectar.php");
             $usuario = $_POST["usuario"] ?? '';
             $senha = $_POST["senha"] ?? '';
 
-            $sql = "INSERT INTO usuario (usuario, senha) VALUES (:user, :senha)";
+            $sql = "INSERT INTO user (name, pass) VALUES (:user, :pass)";
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(":user","$usuario");
-            $stmt->bindValue(":senha", "$senha");
+            $stmt->bindValue(":pass", "$senha");
             $stmt->execute();
             if ($stmt->rowCount() >= 1) {
                 echo "usuario cadastrado";
