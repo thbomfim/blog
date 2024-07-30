@@ -5,8 +5,9 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 ini_set("memory_limit", "256M");
 define("ID_USER", "$_SESSION[id]");
-define("NAME_USER", "$_SESSION[user]");
-$title = "Blog";
+define("NAME_USER", "$_SESSION[user]" ?? '');
+$title = "THZINHO";
+$pg = $_GET["pg"] ?? '';
 ##Hora local 
 date_default_timezone_set("America/Sao_Paulo");
 

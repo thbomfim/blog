@@ -1,32 +1,27 @@
 <?php
-include("../app/conexao/conectar.php");
-ini_set('display_errors',1);
-ini_set('display_startup_erros',1);
-error_reporting(E_ALL);
+include("../app/config/config.php");
 ?>
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../app/css/style.css">
-
+    <title><?=$title?></title>
 </head>
-
-<?php 
-$page = $_GET["page"];
-?>
-
 <body>
-    <header>
-        <h1>Blog</h1>
-    </header>
+    <nav class="sticky-top bg-body-tertiary">
+
+        <div class="menu container-fluid">
+            <h1>
+                <a class"navbar-brand" id="logo" href="#">THZINHO</a>
+            </h1>
+    </nav>
 
     <div class="container">
-        <form method="post" action="?page=login">
+        <form method="post" action="?pg=login">
             <label>Usuario:</label><input type="text" name="usuario" id="usuario"><br>
             <label>Senha: <input type="password" name="senha" id="senha"></label><br>
             <input type="submit" value="Entrar">
@@ -35,13 +30,13 @@ $page = $_GET["page"];
 
     <?php 
 
-    if ($page == "login") {
+    if ($pg == "login") {
         
         $usuario = $_POST["usuario"];
         $senha = $_POST["senha"]; 
         
         
-        $sql = "SELECT * FROM user WHERE name = :name AND pass = :pass";
+        $sql = "SELECT * FROM th_user WHERE name = :name AND pass = :pass";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(":name", $usuario);
         $stmt->bindValue(":pass", $senha);

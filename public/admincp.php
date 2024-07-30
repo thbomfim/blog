@@ -12,7 +12,7 @@ include("../app/conexao/conectar.php");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog!</title>
+    <title><?=$title?></title>
     <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../app/css/style.css">
 
@@ -25,15 +25,15 @@ include("../app/conexao/conectar.php");
 
     <div class="container">
         <?php 
-        if ($page == "login") 
+        if ($pg == "login") 
         {
             # code...
-        }elseif ($page == "cadastrook") 
+        }elseif ($pg == "cadastrook") 
         {
             $usuario = $_POST["usuario"] ?? '';
             $senha = $_POST["senha"] ?? '';
 
-            $sql = "INSERT INTO user (name, pass) VALUES (:user, :pass)";
+            $sql = "INSERT INTO th_user (name, pass) VALUES (:user, :pass)";
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(":user","$usuario");
             $stmt->bindValue(":pass", "$senha");
@@ -45,10 +45,10 @@ include("../app/conexao/conectar.php");
             }
 
         }
-        elseif($page == "cadastro") 
+        elseif($pg == "cadastro") 
         {
             echo "<h2>cadastrar novo menbro da equipe</h2><br>";
-            echo "<form method=\"post\" action=\"admincp.php?page=cadastrook\">";
+            echo "<form method=\"post\" action=\"admincp.php?pg=cadastrook\">";
             echo "<label>usuario:</label><input type=\"text\" name=\"usuario\" id=\"usuario\"><br>";
             echo "<label>senha:</label><input type=\"text\" name=\"senha\" id=\"senha\"><br>";
             echo "<input type=\"submit\" value=\"Cadastrar\">";
