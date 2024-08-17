@@ -65,7 +65,7 @@ include("../app/config/config.php");
                     <?php 
                     $sql = "SELECT * FROM th_post ORDER BY id DESC LIMIT 5";
                     $stmt = $pdo->query($sql);
-                    
+                    var_dump($stmt->fetchAll());
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
                     {
                         $textCurto = substr($row["text"], 0, 100);
