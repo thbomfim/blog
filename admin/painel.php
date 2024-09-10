@@ -1,15 +1,15 @@
 <?php 
-include("../app/config/config.php");
-include("../app/functions/functions.php");
+session_start();
+include("../config/config.php");
+include("../config/functions/functions.php");
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../app/css/style.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <title><?=$title?></title>
 </head>
 <body>
@@ -26,11 +26,11 @@ include("../app/functions/functions.php");
         echo "<a href=\"adminlogin.php\">Clique aqui e faça seu login</a>";
         exit;
     }
-    echo "ola ".$_SESSION["id"]." Saiba que todas as suas ações seram registadas em logs!<br>";
+    echo "<center>ola <strong>" .NAME_USER. " </strong>Saiba que todas as suas ações seram registadas em logs!</center><br>";
     ?>
     <div class="linha1">
         <h2>Posts</h2><br>
-        <a href="admincp.php?pg=addpost">Adicionar Post</a><hr>
+        <a href="admincp.php?pg=addposts">Adicionar Post</a><hr>
         <a href="admincp.php?pg=editpost">Editar Post</a><hr><br>
         <h2>administrar</h2><br>
         <a href="admincp.php?pg=cadastro">Cadastrar membro de equipe</a><hr>

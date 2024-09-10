@@ -1,0 +1,27 @@
+@font-face {
+    font-family: Oswald;
+    src: url(../../assets/fonts/Oswald-Bold.ttf);
+}
+body, html {
+    height: 100%;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.login {
+    margin-left: 70px;
+    margin-right: 10px;
+    width: 400px;
+    height: 400px;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    color: #ffff;
+    background-color: #1C1C1C;
+    border-radius: 10px;
+
+}
+.login h1 {
+    font-family: Oswald;
+}

@@ -1,6 +1,8 @@
 <?php 
 include_once("../app/config/config.php");
 
+
+////////////////////////verifica se o usuario e um admin
 function isAdmin() {
     global $pdo;
 
@@ -18,7 +20,7 @@ function isAdmin() {
         return false;
     }
 }
-
+//////////////////////mostra o id do usuario
 function idUser()
 {
     global $pdo;
@@ -32,7 +34,7 @@ function idUser()
 
         return $row["id"];
 }
-
+/////////////////////mostra o nome do usuario
 function nameUser() 
 {
     global $pdo;

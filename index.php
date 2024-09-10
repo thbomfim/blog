@@ -1,5 +1,5 @@
 <?php
-include("../app/config/config.php");
+include("config/config.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,7 +10,7 @@ include("../app/config/config.php");
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Clean Blog - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="../app/assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -20,7 +20,7 @@ include("../app/config/config.php");
         href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
         rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../app/css/style.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
     </head>
     
     <body>
@@ -44,7 +44,7 @@ include("../app/config/config.php");
         </div>
     </nav>
     <!-- Page Header-->
-    <header class="masthead" style="background-image: url('../app/assets/img/hometec.jpg')">
+    <header class="masthead" style="background-image: url('assets/img/hometec.jpg')">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
@@ -65,7 +65,7 @@ include("../app/config/config.php");
                     <?php 
                     $sql = "SELECT * FROM th_post ORDER BY id DESC LIMIT 5";
                     $stmt = $pdo->query($sql);
-                    var_dump($stmt->fetchAll());
+                    //var_dump($stmt->fetchAll());
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
                     {
                         $textCurto = substr($row["text"], 0, 100);
@@ -131,6 +131,6 @@ include("../app/config/config.php");
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="assets/js/scripts.js"></script>
     </body>
 </html>
