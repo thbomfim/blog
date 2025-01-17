@@ -1,5 +1,12 @@
 <?php 
+require("vendor/autoload.php");
 include("config/config.php");
+
+
+use League\CommonMark\GithubFlavoredMarkdownConverter;
+
+$converter = new GithubFlavoredMarkdownConverter();
+//$my_html = Markdown::defaultTransform($my_text);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -76,7 +83,8 @@ include("config/config.php");
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <?php 
-                        echo "".$row["text"]."";
+                        
+                        echo $converter->convert("".$row["text"]."");
                         ?>
                     </div>
                 </div>

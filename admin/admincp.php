@@ -5,6 +5,7 @@ ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
 
 include("../config/config.php");
+include("../config/functions/functions.php")
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
@@ -92,16 +93,38 @@ include("../config/config.php");
                 echo "Ocorreu algum erro, tente novamente";
             }
         }
-        elseif ($pg = "addposts") 
+        elseif ($pg == "addposts") 
         {
             echo '<form method="post" action="?pg=addpost">';
             echo '<label>Titulo:</label><input type="text" name="titlePost" placeholder="seu titulo"><br>';
             echo '<label>Post:</label><textarea name="text" rows="5" cols="50" placeholder="digite seu post"></textarea><br>';
             echo '<input type="submit" value="Postar">';
         }
-        elseif ($pg == "readpost") 
+        elseif ($pg == "delpost") 
+        {
+            echo '<form method="post" action="?pg=delpostok">';
+            echo '<label>Digite o id do post</label><input type="number" name="id">';
+            echo '<input type="submit" value="Deletar">';
+            
+        }
+        elseif ($pg == "delpostok") 
         {
             
+            $id = $_POST["id"];
+
+            $sql = "DELETE FROM th_post WHERE id = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(":id","$id");
+            $stmt->execute();
+
+            if ($stmt->rowCount() >= 1) {
+                
+                echo 'Post deletado';
+            }
+            else
+            {
+                echo 'Ocorreu algum erro!';
+            }
         }
         
         ?>

@@ -31,7 +31,8 @@ include("../config/functions/functions.php");
     <div class="linha1">
         <h2>Posts</h2><br>
         <a href="admincp.php?pg=addposts">Adicionar Post</a><hr>
-        <a href="admincp.php?pg=editpost">Editar Post</a><hr><br>
+        <a href="admincp.php?pg=editpost">Editar Post</a><hr>
+        <a href="admincp.php?pg=delpost">Delatar Post</a><hr><br>
         <h2>administrar</h2><br>
         <a href="admincp.php?pg=cadastro">Cadastrar membro de equipe</a><hr>
         <a href="admincp.php?pg=edituser">Modificar membro da equipe</a>

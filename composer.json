@@ -1,0 +1,18 @@
+{
+    "name": "bomfi/blog",
+    "autoload": {
+        "psr-4": {
+            "Bomfi\\Blog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thiago Bomfim",
+            "email": "40004059+thbomfim@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "michelf/php-markdown": "^2.0",
+        "league/commonmark": "2.5"
+    }
+}

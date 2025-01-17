@@ -1,5 +1,10 @@
 <?php
+require("vendor/autoload.php");
 include("config/config.php");
+
+use League\CommonMark\GithubFlavoredMarkdownConverter;
+
+$converter = new GithubFlavoredMarkdownConverter();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -36,9 +41,9 @@ include("config/config.php");
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="sobre.html">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contato.html">Contato</a></li>
                 </ul>
             </div>
         </div>
@@ -50,8 +55,7 @@ include("config/config.php");
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
                         <h1>Thiago B.</h1>
-                        <span class="subheading">este é um humilde blog sobre a minha rotina de aprender
-                            programação</span>
+                        <span class="subheading">este é um humilde blog sobre um iniciante em programação e pessoal</span>
                         </div>
                     </div>
                 </div>
@@ -74,7 +78,7 @@ include("config/config.php");
                         <div class="post-preview">
                             <a href="post.php?pg=readpost&id=<?=$row["id"]?>">
                             <h2 class="post-title"><?= $row["title"]?></h2>
-                            <h4 class="post-subtitle"><?=$textCurto?></h4>
+                            <h4 class="post-subtitle"><?=$converter->convert($textCurto);?></h4>
                             </a>
                         <p class="post-meta">
                             Posted by

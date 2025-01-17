@@ -1,7 +1,7 @@
 <?php 
-include_once("../app/config/config.php");
+include("../config.php");
 
-
+var_dump(__DIR__);
 ////////////////////////verifica se o usuario e um admin
 function isAdmin() {
     global $pdo;
