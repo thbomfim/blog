@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include("../config/config.php");
-include("../config/functions/functions.php");
+//include("../config/functions/functions.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">

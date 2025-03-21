@@ -1,8 +1,8 @@
 {
-    "name": "bomfi/blog",
+    "name": "thiago/blog",
     "autoload": {
         "psr-4": {
-            "Bomfi\\Blog\\": "src/"
+            "Thiago\\Blog\\": "src/"
         }
     },
     "authors": [
@@ -12,7 +12,6 @@
         }
     ],
     "require": {
-        "michelf/php-markdown": "^2.0",
-        "league/commonmark": "2.5"
+        "league/commonmark": "^2.6.1"
     }
 }

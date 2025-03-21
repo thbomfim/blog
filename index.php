@@ -1,10 +1,13 @@
 <?php
-require("vendor/autoload.php");
-include("config/config.php");
+require "config/config.php";
+require "vendor/autoload.php";
 
 use League\CommonMark\GithubFlavoredMarkdownConverter;
 
-$converter = new GithubFlavoredMarkdownConverter();
+$converter = new GithubFlavoredMarkdownConverter([
+    'html_input' => 'strip',
+    'allow_unsafe_links' => false,
+]   );
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
